@@ -2,7 +2,6 @@ require 'httparty'
 require 'nokogiri'
 
 url = "https://miami.craigslist.org/search/sof"
-
 response = HTTParty.get url
 
 dom = Nokogiri::HTML(response.body)
