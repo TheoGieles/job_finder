@@ -3,7 +3,8 @@ require 'httparty'
 require 'nokogiri'
 
 get '/' do
-	url = "https://miami.craigslist.org/search/sof"
+	job = params["job"]
+	url = "https://miami.craigslist.org/search/#{job}?s=0"
 	response = HTTParty.get url
 
 	dom = Nokogiri::HTML(response.body)
